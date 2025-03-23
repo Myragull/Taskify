@@ -11,13 +11,8 @@ function getData(){
 
 getData();
 
-function addTask(){
-let uservalue=userInput.value;
-if (uservalue.length>0) {
-  // adding uservalue to array
-  uservalue.trim();
-  let addedValueToArray=userArray.push(uservalue);
-  // console.log(userArray);
+
+function createItemsDynamically(){
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
   todoEntry.className = "todo";
@@ -32,18 +27,28 @@ if (uservalue.length>0) {
   deleteBtn.textContent= "Delete";
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
-  // add data to local storage
-  console.log(localStorage.setItem("userData", JSON.stringify(userArray)));
-   
-  // function for the deletebtn
-  function deleteItem(){
-    para.remove();
-    deleteBtn.remove();
   }
-  deleteBtn.addEventListener('click',deleteItem);
-  userInput.value="";
-}
 
+function addTask(){
+  let uservalue=userInput.value;
+
+if (uservalue.length>0) {
+ // adding uservalue to array
+ uservalue.trim();
+ let addedValueToArray=userArray.push(uservalue);
+ // console.log(userArray);
+ // add data to local storage
+   localStorage.setItem("userData", JSON.stringify(userArray));
+  createItemsDynamically()
+
+}
+  // // function for the deletebtn
+  // function deleteItem(){
+  //   para.remove();
+  //   deleteBtn.remove();
+  // }
+  // deleteBtn.addEventListener('click',deleteItem);
+  userInput.value="";
 }
 
 
