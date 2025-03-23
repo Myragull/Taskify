@@ -3,13 +3,10 @@ let addBtn= document.querySelector(".add-btn");
 let displayTask=document.querySelector(".task_display-container");
 
 
-function addTask(e){
-  // e.preventDefault();
+function addTask(){
 let uservalue=userInput.value;
-// console.log(uservalue);
 if (uservalue.length>0) {
-console.log("hello");
-  // create a container to put the todo in
+    // create a container to put the todo in
   const todoEntry= document.createElement('div');
   todoEntry.className = "todo";
     // created paragraph element inside displayTask
@@ -23,6 +20,11 @@ console.log("hello");
   deleteBtn.textContent= "Delete";
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
+  // add data to local storage
+  // localStorage.setItem("userData", uservalue);
+  // localStorage.setItem("userData", para.value);
+   localStorage.setItem("userData", JSON.stringify(para.value));
+   
   // function for the deletebtn
   function deleteItem(){
     para.remove();
@@ -43,3 +45,4 @@ userInput.addEventListener("keypress", function(event) {
       addTask();
     }
   });
+
