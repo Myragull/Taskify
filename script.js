@@ -7,3 +7,15 @@ console.log(uservalue);
 }
 
 addBtn.addEventListener("click", addTask);
+// userInput.addEventListener("keydown",(e)=>{
+//     if(e.keycode===13){
+//         addTask();
+//     }
+// });
+
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      addTask();
+    }
+  });
