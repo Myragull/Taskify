@@ -4,6 +4,13 @@ let displayTask=document.querySelector(".task_display-container");
 let userArray=[];
 
 
+function getData(){
+  arrayList = JSON.parse(localStorage.getItem("userArray"));
+  console.log(userArray);
+}
+
+getData();
+
 function addTask(){
 let uservalue=userInput.value;
 if (uservalue.length>0) {
