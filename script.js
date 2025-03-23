@@ -12,14 +12,14 @@ function getData(){
 getData();
 
 
-function createItemsDynamically(){
+function createItemsDynamically(value){
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
   todoEntry.className = "todo";
     // created paragraph element inside displayTask
   const para=document.createElement('p');
   para.className = 'display-added-task';
-  para.textContent=uservalue;
+  para.textContent=value;
   todoEntry.appendChild(para);
   // created delete button
   const deleteBtn= document.createElement('Button');
@@ -39,7 +39,7 @@ if (uservalue.length>0) {
  // console.log(userArray);
  // add data to local storage
    localStorage.setItem("userData", JSON.stringify(userArray));
-  createItemsDynamically()
+  createItemsDynamically(uservalue);
 
 }
   // // function for the deletebtn
