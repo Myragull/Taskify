@@ -8,7 +8,7 @@ let uservalue=userInput.value;
 if (uservalue.length>0) {
   // adding uservalue to array
   let addedValueToArray=userArray.push(uservalue);
-  console.log(addedValueToArray);
+  console.log(userArray);
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
   todoEntry.className = "todo";
