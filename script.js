@@ -7,6 +7,7 @@ function addTask(){
 let uservalue=userInput.value;
 if (uservalue.length>0) {
   // adding uservalue to array
+  uservalue.trim();
   let addedValueToArray=userArray.push(uservalue);
   console.log(userArray);
     // create a container to put the todo in
