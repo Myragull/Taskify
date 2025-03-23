@@ -52,6 +52,7 @@ h1{
 .task_display-container{
     margin-top: 25px;
     display: flex;
+    flex-direction: column;
 }
 
 .display-added-task{
@@ -65,6 +66,7 @@ h1{
     display: flex;
     align-items: center;
     color: white;
+    margin-bottom: 10px;
 }
 
 .delete-btn{
