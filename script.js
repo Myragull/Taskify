@@ -2,7 +2,7 @@ let userInput=document.querySelector(".user-input");
 let addBtn= document.querySelector(".add-btn");
 let displayTask=document.querySelector(".task_display-container");
 let userArray=[];
-
+//
 
 function createItemsDynamically(value){
     // create a container to put the todo in
