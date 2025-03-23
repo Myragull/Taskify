@@ -22,7 +22,7 @@ function createItemsDynamically(value){
   }
 
   function getData(){
-    arrayList = JSON.parse(localStorage.getItem("userData"));
+    arrayList = JSON.parse(localStorage.getItem("userData")) || [];
     console.log(arrayList);
     arrayList.forEach(element => {
       createItemsDynamically(element);
