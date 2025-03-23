@@ -6,7 +6,7 @@ let userArray=[];
 
 function getData(){
   arrayList = JSON.parse(localStorage.getItem("userArray"));
-  console.log(userArray);
+  console.log(arrayList);
 }
 
 getData();
@@ -33,7 +33,7 @@ if (uservalue.length>0) {
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
   // add data to local storage
-   localStorage.setItem("userData", JSON.stringify(userArray));
+  console.log(localStorage.setItem("userData", JSON.stringify(userArray)));
    
   // function for the deletebtn
   function deleteItem(){
