@@ -4,14 +4,6 @@ let displayTask=document.querySelector(".task_display-container");
 let userArray=[];
 
 
-function getData(){
-  arrayList = JSON.parse(localStorage.getItem("userData"));
-  console.log(arrayList);
-}
-
-getData();
-
-
 function createItemsDynamically(value){
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
@@ -28,6 +20,14 @@ function createItemsDynamically(value){
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
   }
+
+  function getData(){
+    arrayList = JSON.parse(localStorage.getItem("userData"));
+    console.log(arrayList);
+    createItemsDynamically(arrayList);
+  }
+  
+  getData();
 
 function addTask(){
   let uservalue=userInput.value;
