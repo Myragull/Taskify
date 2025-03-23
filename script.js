@@ -1,11 +1,14 @@
 let userInput=document.querySelector(".user-input");
 let addBtn= document.querySelector(".add-btn");
 let displayTask=document.querySelector(".task_display-container");
-
+let userArray=[];
 
 function addTask(){
 let uservalue=userInput.value;
 if (uservalue.length>0) {
+  // adding uservalue to array
+  let addedValueToArray=userArray.push(uservalue);
+  console.log(addedValueToArray);
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
   todoEntry.className = "todo";
@@ -21,9 +24,7 @@ if (uservalue.length>0) {
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
   // add data to local storage
-  // localStorage.setItem("userData", uservalue);
-  // localStorage.setItem("userData", para.value);
-   localStorage.setItem("userData", JSON.stringify(para.value));
+   localStorage.setItem("userData", JSON.stringify(userArray));
    
   // function for the deletebtn
   function deleteItem(){
