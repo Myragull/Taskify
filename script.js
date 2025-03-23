@@ -5,7 +5,7 @@ let userArray=[];
 
 
 function getData(){
-  arrayList = JSON.parse(localStorage.getItem("userArray"));
+  arrayList = JSON.parse(localStorage.getItem("userData"));
   console.log(arrayList);
 }
 
