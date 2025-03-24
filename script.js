@@ -4,14 +4,16 @@ let displayTask=document.querySelector(".task_display-container");
 let userArray= JSON.parse(localStorage.getItem("userData")) || [];
 
 // function to create items dynamically
-function createItemsDynamically(value){
+function createItemsDynamically(task){
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
   todoEntry.className = "todo";
+  // * store the ID in element
+  todoEntry.setAttribute("data-ID",task.id);
     // created paragraph element inside displayTask
   const para=document.createElement('p');
   para.className = 'display-added-task';
-  para.textContent=value;
+  para.textContent=task.value;
   todoEntry.appendChild(para);
   // created delete button
   const deleteBtn= document.createElement('Button');
@@ -20,16 +22,17 @@ function createItemsDynamically(value){
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
   deleteBtn.addEventListener('click',function(){
-    deleteItem(todoEntry,value);
+    deleteItem(todoEntry,task.id);
   });
   }
 
   // function to get data
   function getData(){
-    arrayList = JSON.parse(localStorage.getItem("userData")) || [];
-    console.log(arrayList);
-    arrayList.forEach(element => {
-      createItemsDynamically(element);
+    displayTask.innerHTML = "";
+    userArray = JSON.parse(localStorage.getItem("userData")) || [];
+    console.log(userArray);
+    userArray.forEach(task => {
+      createItemsDynamically(task);
     });
   }
   
@@ -39,12 +42,17 @@ function createItemsDynamically(value){
 function addTask(){
   let uservalue=userInput.value.trim();
 if (uservalue.length>0) {
+  // *create an object to assign ids to each value
+  let task = {
+    id: Date.now(),
+    value : uservalue
+  }
  // adding uservalue to array
- userArray.push(uservalue);
+ userArray.push(task);
  // console.log(userArray);
  // add data to local storage
    localStorage.setItem("userData", JSON.stringify(userArray));
-  createItemsDynamically(uservalue);
+  createItemsDynamically(task);
 }
   userInput.value="";
 }
@@ -52,9 +60,9 @@ if (uservalue.length>0) {
 // function for the deletebtn
 function deleteItem(todoEntry,value){
   todoEntry.remove();
-   userArray= userArray.filter(item=>item!==value);
+  // * change the filter condition to match the unique ids
+   userArray= userArray.filter(task=>task.id!==value);
    localStorage.setItem("userData",JSON.stringify(userArray));
-  
 }
 
 addBtn.addEventListener("click", addTask);
