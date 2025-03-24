@@ -37,11 +37,10 @@ function createItemsDynamically(value){
 
 // function to add data
 function addTask(){
-  let uservalue=userInput.value;
+  let uservalue=userInput.value.trim();
 if (uservalue.length>0) {
  // adding uservalue to array
- uservalue.trim();
- let addedValueToArray=userArray.push(uservalue);
+ userArray.push(uservalue);
  // console.log(userArray);
  // add data to local storage
    localStorage.setItem("userData", JSON.stringify(userArray));
