@@ -3,6 +3,7 @@ let addBtn= document.querySelector(".add-btn");
 let displayTask=document.querySelector(".task_display-container");
 let userArray= JSON.parse(localStorage.getItem("userData")) || [];
 
+// function to create items dynamically
 function createItemsDynamically(value){
     // create a container to put the todo in
   const todoEntry= document.createElement('div');
@@ -23,6 +24,7 @@ function createItemsDynamically(value){
   });
   }
 
+  // function to get data
   function getData(){
     arrayList = JSON.parse(localStorage.getItem("userData")) || [];
     console.log(arrayList);
@@ -33,6 +35,7 @@ function createItemsDynamically(value){
   
   getData();
 
+// function to add data
 function addTask(){
   let uservalue=userInput.value;
 if (uservalue.length>0) {
@@ -51,7 +54,7 @@ if (uservalue.length>0) {
   function deleteItem(para,deletebtn){
     para.remove();
     deletebtn.remove();
-    localStorage.removeItem("userData");
+    localStorage.removeItem.key(userArray);
   }
 
 
