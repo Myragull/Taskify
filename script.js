@@ -48,11 +48,11 @@ if (uservalue.length>0) {
 }
 
 // function for the deletebtn
-  function deleteItem(){
-    para.remove();
-    deleteBtn.remove();
-  }
-  deleteBtn.addEventListener('click',deleteItem);
+  // function deleteItem(){
+  //   para.remove();
+  //   deleteBtn.remove();
+  // }
+  // deleteBtn.addEventListener('click',deleteItem);
 
 
 addBtn.addEventListener("click", addTask);
