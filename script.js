@@ -54,7 +54,7 @@ if (uservalue.length>0) {
   function deleteItem(para,deletebtn){
     para.remove();
     deletebtn.remove();
-    localStorage.removeItem.key(userArray);
+    localStorage.removeItem(userArray);
   }
 
 
