@@ -20,7 +20,7 @@ function createItemsDynamically(value){
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
   deleteBtn.addEventListener('click',function(){
-    deleteItem(para,deleteBtn);
+    deleteItem(todoEntry,value);
   });
   }
 
@@ -51,10 +51,11 @@ if (uservalue.length>0) {
 }
 
 // function for the deletebtn
-function deleteItem(para,deletebtn){
-  para.remove();
-  deletebtn.remove();
-  localStorage.removeItem("userData");
+function deleteItem(todoEntry,value){
+  todoEntry.remove();
+   userArray= userArray.filter(item=>item!==value);
+   localStorage.setItem("userData",JSON.stringify(userArray));
+  
 }
 
 addBtn.addEventListener("click", addTask);
