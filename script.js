@@ -59,7 +59,6 @@ addBtn.addEventListener("click", addTask);
 
 userInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-      // event.preventDefault();
       addTask();
     }
   });
