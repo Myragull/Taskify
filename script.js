@@ -50,13 +50,6 @@ if (uservalue.length>0) {
   userInput.value="";
 }
 
-// function for the deletebtn
-  function deleteItem(para,deletebtn){
-    para.remove();
-    deletebtn.remove();
-    localStorage.removeItem(userArray);
-  }
-
 
 addBtn.addEventListener("click", addTask);
 
