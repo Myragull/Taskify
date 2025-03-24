@@ -18,6 +18,9 @@ function createItemsDynamically(value){
   deleteBtn.textContent= "Delete";
   todoEntry.appendChild(deleteBtn);
   displayTask.appendChild(todoEntry);
+  deleteBtn.addEventListener('click',function(){
+    deleteItem(para,deleteBtn);
+  });
   }
 
   function getData(){
@@ -25,7 +28,6 @@ function createItemsDynamically(value){
     console.log(arrayList);
     arrayList.forEach(element => {
       createItemsDynamically(element);
-
     });
   }
   
@@ -33,7 +35,6 @@ function createItemsDynamically(value){
 
 function addTask(){
   let uservalue=userInput.value;
-
 if (uservalue.length>0) {
  // adding uservalue to array
  uservalue.trim();
@@ -42,17 +43,16 @@ if (uservalue.length>0) {
  // add data to local storage
    localStorage.setItem("userData", JSON.stringify(userArray));
   createItemsDynamically(uservalue);
-
 }
   userInput.value="";
 }
 
 // function for the deletebtn
-  // function deleteItem(){
-  //   para.remove();
-  //   deleteBtn.remove();
-  // }
-  // deleteBtn.addEventListener('click',deleteItem);
+  function deleteItem(para,deletebtn){
+    para.remove();
+    deletebtn.remove();
+    localStorage.removeItem("userData");
+  }
 
 
 addBtn.addEventListener("click", addTask);
