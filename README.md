@@ -1,4 +1,4 @@
-# ✅ Taskify
+# ✅ TaskStore JS
 
 A simple yet powerful **To-Do List App** built with **HTML, CSS & JavaScript** — featuring local storage so your tasks stay saved even after refreshing the page.
 
